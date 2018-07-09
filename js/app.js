@@ -1,3 +1,4 @@
+"use strict"
 var score = 0;
 
 // Enemies our player must avoid
@@ -64,8 +65,6 @@ Enemy.prototype.update = function(dt) {
 Player.prototype.update = function() {
     
     for(var i = 0; i < 3; i++) {
-        console.log(this.x + " " + this.y + " " + 
-        allEnemies[i].x+ " " + allEnemies[i].y+ " ");
         if((this.y + 40 > allEnemies[i].y) &&
          (this.y < allEnemies[i].y + 40)  && (this.x < allEnemies[i].x + 50) 
         && (this.x + 50 > allEnemies[i].x)) {
@@ -102,7 +101,6 @@ if(button == 'left') {
         this.y = 460;
         score = score + 1;
 
-        console.log(score);
         $("#score").text("score" + score);
     }
 
